@@ -1,0 +1,5 @@
+name: Tesada
+version: '${version}'
+main: tesada.tesada.Tesada
+api-version: 1.19
+author: CraftSupport
