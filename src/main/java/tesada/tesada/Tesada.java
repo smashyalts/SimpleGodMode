@@ -9,18 +9,16 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 import static org.bukkit.Bukkit.getPlayer;
 
 public final class Tesada extends JavaPlugin implements Listener {
-    List<UUID> godMode = new ArrayList<>();
+    Set<UUID> godMode = new HashSet<>();
     @EventHandler
     public void onDamage(EntityDamageEvent e) {
         if (e.getEntity() instanceof Player p) {
-            if (godMode.contains(e.getEntity().getUniqueId()) && p.hasPermission("tesada.godmode")) {
+            if (godMode.contains(p.getUniqueId())){
                 e.setCancelled(true);
             }
         }
