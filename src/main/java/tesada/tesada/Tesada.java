@@ -16,30 +16,29 @@ import java.util.UUID;
 import static org.bukkit.Bukkit.getPlayer;
 
 public final class Tesada extends JavaPlugin implements Listener {
-    List<Player> godMode = new ArrayList<>();
+    List<UUID> godMode = new ArrayList<>();
     @EventHandler
-    public void OnDamage(EntityDamageEvent e) {
+    public void onDamage(EntityDamageEvent e) {
         if (e.getEntity() instanceof Player p) {
-            if (godMode.contains(p) && p.hasPermission("tesada.godmode")) {
+            if (godMode.contains(e.getEntity().getUniqueId()) && p.hasPermission("tesada.godmode")) {
                 e.setCancelled(true);
             }
         }
     }
     @EventHandler
-    public void OnChat(AsyncChatEvent e) {
+    public void onChat(AsyncChatEvent e) {
         if ((e.originalMessage().toString().contains("i am a god"))){
-            if (!e.getPlayer().hasPermission("tesada.godmode"))
-                e.getPlayer().sendMessage(ChatColor.DARK_RED + "U Do Not Have Permission For This Command");
-            else if(e.getPlayer().hasPermission("tesada.godmode")) {
-                if (godMode.contains(e.getPlayer())) {
+            if(e.getPlayer().hasPermission("tesada.godmode")) {
+                if (godMode.contains(e.getPlayer().getUniqueId())) {
                     e.getPlayer().sendMessage(ChatColor.DARK_RED + "U have Now Disabled GodMode");
-                    godMode.remove(e.getPlayer());
+                    godMode.remove(e.getPlayer().getUniqueId());
                 }
                 else {
                     Bukkit.getLogger().warning(ChatColor.RED + "U have Now Enabled GodMode");
                     e.getPlayer().sendMessage(ChatColor.GREEN + "U have Now Enabled GodMode");
-                    godMode.add(e.getPlayer()); }}
+                    godMode.add(e.getPlayer().getUniqueId()); }}
             }
+            else e.getPlayer().sendMessage(ChatColor.DARK_RED + "U Do Not Have Permission For This Command");
         }
     @Override
     public void onEnable() {
