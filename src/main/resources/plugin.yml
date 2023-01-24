@@ -1,7 +1,7 @@
 name: SGM
 version: '${version}'
 main: sgm.sgm.SGM
-api-version: 1.19
+api-version: 1.13
 author: CraftSupport
 commands:
   god:
