@@ -1,10 +1,10 @@
-name: Tesada
+name: SGM
 version: '${version}'
-main: tesada.tesada.Tesada
+main: sgm.sgm.SGM
 api-version: 1.19
 author: CraftSupport
 commands:
   god:
     description: Command to Enable And Disable GodMode
     usage: /<command>
-    permission: tesada.godmode
+    permission: SGM.godmode

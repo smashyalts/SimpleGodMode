@@ -1,24 +1,20 @@
-package tesada.tesada;
+package SGM.SGM;
 
-import io.papermc.paper.event.player.AsyncChatEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.player.PlayerCommandSendEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-import static org.bukkit.Bukkit.getPlayer;
 
-public final class Tesada extends JavaPlugin implements Listener {
+public final class SGM extends JavaPlugin implements Listener {
     Set<UUID> godMode = new HashSet<>();
     @EventHandler
     public void onDamage(EntityDamageEvent e) {
@@ -33,7 +29,7 @@ public final class Tesada extends JavaPlugin implements Listener {
         if (command.equals("god"))
             if (sender instanceof Player player) {
                 UUID uuid = player.getUniqueId();
-                if(sender.hasPermission("tesada.godmode")) {
+                if(sender.hasPermission("SGM.godmode")) {
                     if (godMode.contains(uuid)) {
                         sender.sendMessage(ChatColor.DARK_RED + "U have Now Disabled GodMode");
                         godMode.remove(uuid);
