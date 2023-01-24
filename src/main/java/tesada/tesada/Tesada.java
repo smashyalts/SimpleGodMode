@@ -39,7 +39,6 @@ public final class Tesada extends JavaPlugin implements Listener {
                         godMode.remove(uuid);
                     }
                     else {
-                        Bukkit.getLogger().warning(ChatColor.RED + "U have Now Enabled GodMode");
                         sender.sendMessage(ChatColor.GREEN + "U have Now Enabled GodMode");
                         godMode.add(uuid); }}
                 else sender.sendMessage(ChatColor.DARK_RED + "U Do Not Have Permission For This Command");
@@ -50,7 +49,7 @@ public final class Tesada extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
-        Bukkit.getLogger().info(ChatColor.YELLOW + "I Have Arisen");
+        Bukkit.getLogger().finest(Bukkit.getName() + "Plugin Enabling");
         this.getCommand("onCommand").setExecutor(this);
     }
 
