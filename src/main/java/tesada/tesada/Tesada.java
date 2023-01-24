@@ -56,6 +56,6 @@ public final class Tesada extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        Bukkit.getLogger().info(ChatColor.AQUA + "You Are Now Mortal!");
+        Bukkit.getLogger().severe(Bukkit.getName() + "Plugin Disabling");
     }
 }
