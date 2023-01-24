@@ -51,7 +51,7 @@ public final class Tesada extends JavaPlugin implements Listener {
     public void onEnable() {
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
         Bukkit.getLogger().info(ChatColor.YELLOW + "I Have Arisen");
-        this.getCommand("onCommand").setExecutor(new Tesada());
+        this.getCommand("onCommand").setExecutor(this);
     }
 
     @Override
