@@ -1,5 +1,6 @@
 package SGM.SGM.COMMAND;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,7 +18,7 @@ public class GodCommand implements @Nullable CommandExecutor {
     public static Set<UUID> godMode = new HashSet<>();
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (command.equals("god"))
+        if (command.getName().equals("god"))
             if (sender instanceof Player player) {
                 UUID uuid = player.getUniqueId();
                 if(sender.hasPermission("SGM.godmode")) {
@@ -28,7 +29,6 @@ public class GodCommand implements @Nullable CommandExecutor {
                     else {
                         sender.sendMessage(ChatColor.GREEN + "U have Now Enabled GodMode");
                         godMode.add(uuid); }}
-                else sender.sendMessage(ChatColor.DARK_RED + "U Do Not Have Permission For This Command");
             }
         return true;
     }

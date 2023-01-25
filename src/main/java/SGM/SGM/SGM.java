@@ -3,7 +3,11 @@ import SGM.SGM.Events.Godevents;
 import SGM.SGM.COMMAND.GodCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
+import static java.util.Objects.requireNonNull;
 
 
 public final class SGM extends JavaPlugin {
@@ -12,7 +16,7 @@ public final class SGM extends JavaPlugin {
     public void onEnable() {
         Bukkit.getServer().getPluginManager().registerEvents(new Godevents(), this);
         Bukkit.getLogger().finest(Bukkit.getName() + "Plugin Enabling");
-        getCommand("onCommand").setExecutor(new GodCommand());
+    requireNonNull(getCommand("god")).setExecutor(new GodCommand());
     }
 
     @Override

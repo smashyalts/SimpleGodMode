@@ -1,6 +1,6 @@
 name: SGM
 version: '${version}'
-main: sgm.sgm.SGM
+main: SGM.SGM.SGM
 api-version: 1.13
 author: CraftSupport
 commands:
@@ -8,3 +8,4 @@ commands:
     description: Command to Enable And Disable GodMode
     usage: /<command>
     permission: SGM.godmode
+    permission-message: "&4&l U do not have permission for this command"
