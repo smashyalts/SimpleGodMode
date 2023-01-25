@@ -1,6 +1,6 @@
 package SGM.SGM.Events;
 
-import SGM.SGM.COMMAND.GodCommand;
+import  SGM.SGM.COMMAND.GodCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

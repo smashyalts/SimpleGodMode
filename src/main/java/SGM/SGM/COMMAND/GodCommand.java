@@ -1,6 +1,5 @@
 package SGM.SGM.COMMAND;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -32,4 +31,6 @@ public class GodCommand implements @Nullable CommandExecutor {
             }
         return true;
     }
-    }
+}
+
+
